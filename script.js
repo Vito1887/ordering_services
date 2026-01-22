@@ -28,7 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Обработчик клика на логотип - переход в начало страницы
+// Обработчик клика на логотип — переход в начало страницы
 const logo = document.getElementById('logo');
 if (logo) {
     logo.addEventListener('click', function (e) {
@@ -187,19 +187,19 @@ function setupCaptcha(form) {
     const nameInput = form.querySelector('input[type="text"]');
     const emailInput = form.querySelector('input[type="email"]');
     const telInput = form.querySelector('input[type="tel"]');
-    
+
     function validateBeforeSubmit() {
         const hasName = nameInput && nameInput.value.trim();
         const hasEmail = emailInput && emailInput.value.trim();
         const hasTel = telInput && telInput.value.trim();
-        
+
         if ((hasName || hasEmail || hasTel) && !checkbox.checked) {
             errorEl.textContent = 'Для отправки необходимо пройти проверку на робота.';
             return false;
         }
         return true;
     }
-    
+
     if (nameInput) {
         nameInput.addEventListener('blur', validateBeforeSubmit);
     }
@@ -233,7 +233,7 @@ function setupCaptcha(form) {
             inputEl.focus();
             return;
         }
-        
+
         if (value !== currentCode) {
             e.preventDefault();
             errorEl.textContent = 'Текст введён некорректно, попробуйте ещё раз.';
