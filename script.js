@@ -183,17 +183,58 @@ function setupCaptcha(form) {
         errorEl.textContent = '';
     });
 
+    // Валидация при изменении полей (для модалки и тарифных форм)
+    const nameInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const telInput = form.querySelector('input[type="tel"]');
+    
+    function validateBeforeSubmit() {
+        const hasName = nameInput && nameInput.value.trim();
+        const hasEmail = emailInput && emailInput.value.trim();
+        const hasTel = telInput && telInput.value.trim();
+        
+        if ((hasName || hasEmail || hasTel) && !checkbox.checked) {
+            errorEl.textContent = 'Для отправки необходимо пройти проверку на робота.';
+            return false;
+        }
+        return true;
+    }
+    
+    if (nameInput) {
+        nameInput.addEventListener('blur', validateBeforeSubmit);
+    }
+    if (emailInput) {
+        emailInput.addEventListener('blur', validateBeforeSubmit);
+    }
+    if (telInput) {
+        telInput.addEventListener('blur', validateBeforeSubmit);
+    }
+
     form.addEventListener('submit', (e) => {
         errorEl.textContent = '';
 
         if (!checkbox.checked) {
             e.preventDefault();
-            errorEl.textContent = 'Подтвердите, что вы не робот.';
+            const hasName = nameInput && nameInput.value.trim();
+            const hasEmail = emailInput && emailInput.value.trim();
+            const hasTel = telInput && telInput.value.trim();
+            if (hasName || hasEmail || hasTel) {
+                errorEl.textContent = 'Для отправки необходимо пройти проверку на робота.';
+            } else {
+                errorEl.textContent = 'Подтвердите, что вы не робот.';
+            }
             return;
         }
 
         const value = (inputEl.value || '').trim().toUpperCase();
-        if (!value || value !== currentCode) {
+        if (!value) {
+            e.preventDefault();
+            errorEl.textContent = 'Введите текст с картинки.';
+            inputEl.focus();
+            return;
+        }
+        
+        if (value !== currentCode) {
             e.preventDefault();
             errorEl.textContent = 'Текст введён некорректно, попробуйте ещё раз.';
             generateCode();
@@ -218,6 +259,18 @@ function openModal(serviceName) {
 
 function closeModal() {
     if (!modalOverlay) return;
+    const modalForm = document.getElementById('modalOrderForm');
+    if (modalForm) {
+        // Очищаем поля формы при закрытии
+        modalForm.reset();
+        const checkbox = modalForm.querySelector('.order-checkbox');
+        const details = modalForm.querySelector('.order-captcha-details');
+        const inputEl = modalForm.querySelector('.order-captcha-input');
+        const errorEl = modalForm.querySelector('.order-captcha-error');
+        if (details) details.style.display = 'none';
+        if (inputEl) inputEl.value = '';
+        if (errorEl) errorEl.textContent = '';
+    }
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
 }
@@ -283,4 +336,28 @@ document.addEventListener('DOMContentLoaded', function () {
             closeModal();
         });
     }
+
+    // Обработка отправки тарифных форм
+    document.querySelectorAll('.tariff-form').forEach(form => {
+        form.addEventListener('submit', function (e) {
+            if (form.querySelector('.order-captcha-error')?.textContent) {
+                e.preventDefault();
+                return;
+            }
+
+            e.preventDefault();
+            // Здесь должен быть вызов backend / почтового сервиса:
+            // fetch('/api/send-callback-request', { method: 'POST', body: new FormData(form) })
+            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+            const details = form.querySelector('.order-captcha-details');
+            const inputEl = form.querySelector('.order-captcha-input');
+            const errorEl = form.querySelector('.order-captcha-error');
+            const checkbox = form.querySelector('.order-checkbox');
+            if (details) details.style.display = 'none';
+            if (inputEl) inputEl.value = '';
+            if (errorEl) errorEl.textContent = '';
+            if (checkbox) checkbox.checked = false;
+        });
+    });
 });

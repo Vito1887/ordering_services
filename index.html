@@ -235,49 +235,67 @@
                         <h3 class="tariff-title">БАЗОВЫЙ</h3>
                         <p class="tariff-description">Подходит для небольших организаций с базовыми (типовыми) конфигурациями</p>
                         <div class="tariff-price">от <span class="tariff-price-number">6000</span> руб/месяц</div>
-                        <div class="tariff-form">
-                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?">
-                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи">
+                        <form class="tariff-form js-captcha-form">
+                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?" required>
+                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи" required>
                             <div class="tariff-captcha">
                                 <label class="tariff-checkbox-label">
-                                    <input type="checkbox" class="tariff-checkbox">
+                                    <input type="checkbox" class="tariff-checkbox order-checkbox">
                                     <span>Я не робот</span>
                                 </label>
+                                <div class="order-captcha-details" style="display: none;">
+                                    <div class="order-captcha-text"></div>
+                                    <input type="text" class="order-captcha-input tariff-input" placeholder="Введите текст с картинки">
+                                    <button type="button" class="order-captcha-refresh">Обновить</button>
+                                    <div class="order-captcha-error"></div>
+                                </div>
                             </div>
-                            <button class="tariff-btn">Заказать звонок</button>
-                        </div>
+                            <button type="submit" class="tariff-btn">Заказать звонок</button>
+                        </form>
                     </div>
                     <div class="tariff-card">
                         <h3 class="tariff-title">ОПТИМАЛЬНЫЙ</h3>
                         <p class="tariff-description">Сопровождение и техническая поддержка типовых конфигураций версии ПРОФ</p>
                         <div class="tariff-price">от <span class="tariff-price-number">9000</span> руб/месяц</div>
-                        <div class="tariff-form">
-                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?">
-                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи">
+                        <form class="tariff-form js-captcha-form">
+                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?" required>
+                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи" required>
                             <div class="tariff-captcha">
                                 <label class="tariff-checkbox-label">
-                                    <input type="checkbox" class="tariff-checkbox">
+                                    <input type="checkbox" class="tariff-checkbox order-checkbox">
                                     <span>Я не робот</span>
                                 </label>
+                                <div class="order-captcha-details" style="display: none;">
+                                    <div class="order-captcha-text"></div>
+                                    <input type="text" class="order-captcha-input tariff-input" placeholder="Введите текст с картинки">
+                                    <button type="button" class="order-captcha-refresh">Обновить</button>
+                                    <div class="order-captcha-error"></div>
+                                </div>
                             </div>
-                            <button class="tariff-btn">Заказать звонок</button>
-                        </div>
+                            <button type="submit" class="tariff-btn">Заказать звонок</button>
+                        </form>
                     </div>
                     <div class="tariff-card">
                         <h3 class="tariff-title">РАСШИРЕННЫЙ</h3>
                         <p class="tariff-description">Сопровождение и техническая поддержка нетиповых конфигураций версии ПРОФ</p>
                         <div class="tariff-price">от <span class="tariff-price-number">12000</span> руб/месяц</div>
-                        <div class="tariff-form">
-                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?">
-                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи">
+                        <form class="tariff-form js-captcha-form">
+                            <input type="text" class="tariff-input" placeholder="Как к Вам обращаться?" required>
+                            <input type="tel" class="tariff-input" placeholder="Ваш телефон для связи" required>
                             <div class="tariff-captcha">
                                 <label class="tariff-checkbox-label">
-                                    <input type="checkbox" class="tariff-checkbox">
+                                    <input type="checkbox" class="tariff-checkbox order-checkbox">
                                     <span>Я не робот</span>
                                 </label>
+                                <div class="order-captcha-details" style="display: none;">
+                                    <div class="order-captcha-text"></div>
+                                    <input type="text" class="order-captcha-input tariff-input" placeholder="Введите текст с картинки">
+                                    <button type="button" class="order-captcha-refresh">Обновить</button>
+                                    <div class="order-captcha-error"></div>
+                                </div>
                             </div>
-                            <button class="tariff-btn">Заказать звонок</button>
-                        </div>
+                            <button type="submit" class="tariff-btn">Заказать звонок</button>
+                        </form>
                     </div>
                 </div>
             </div>
