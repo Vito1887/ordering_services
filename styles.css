@@ -108,7 +108,7 @@ body {
 
 /* Блок: Превью */
 .preview-section {
-  background: linear-gradient(135deg, #e8d5c4 0%, #d4c4b0 100%);
+  background: linear-gradient(135deg, #6b5344 0%, #5a4a3a 100%);
   padding: 100px 0;
   text-align: center;
   min-height: 70vh;
@@ -131,8 +131,8 @@ body {
 }
 
 .preview-btn {
-  background: white;
-  color: #5a4a3a;
+  background: linear-gradient(135deg, #c9a882 0%, #b8956f 100%);
+  color: white;
   border: none;
   border-radius: 8px;
   padding: 16px 40px;
@@ -140,7 +140,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .preview-btn:hover {
@@ -782,9 +782,11 @@ body {
 
 /* Блок: 1С в облаке */
 .cloud-section {
-  background: linear-gradient(135deg, #f5e6d3 0%, #ede0d1 100%);
+  background: white;
   padding: 80px 0;
   text-align: center;
+  border-top: 3px solid #f5e6d3;
+  border-bottom: 3px solid #f5e6d3;
 }
 
 .cloud-content {
@@ -808,7 +810,7 @@ body {
 .cloud-price-number {
   font-size: 48px;
   font-weight: bold;
-  color: #c9a882;
+  color: #5a4a3a;
 }
 
 .cloud-description {
@@ -819,22 +821,23 @@ body {
 }
 
 .cloud-btn {
-  background: white;
-  color: #c9a882;
-  border: 2px solid #c9a882;
+  background: linear-gradient(135deg, #c9a882 0%, #b8956f 100%);
+  color: white;
+  border: none;
   border-radius: 8px;
   padding: 15px 50px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition:
-    background 0.3s,
-    color 0.3s;
+    transform 0.3s,
+    box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cloud-btn:hover {
-  background: #c9a882;
-  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Блок: Тарифы */
