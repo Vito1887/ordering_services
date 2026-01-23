@@ -106,6 +106,48 @@ body {
   color: #8b6f47;
 }
 
+/* Блок: Превью */
+.preview-section {
+  background: linear-gradient(135deg, #e8d5c4 0%, #d4c4b0 100%);
+  padding: 100px 0;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.preview-tagline {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.preview-btn {
+  background: white;
+  color: #5a4a3a;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.preview-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Блок: Карточки услуг */
 .services-section {
   background: linear-gradient(135deg, #f5e6d3 0%, #ede0d1 100%);
@@ -517,6 +559,10 @@ body {
     height: 45px;
     font-size: 18px;
   }
+
+  .preview-tagline {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -579,6 +625,20 @@ body {
   .not-found-content {
     flex-direction: column;
     align-items: center;
+  }
+
+  .preview-section {
+    padding: 60px 0;
+    min-height: auto;
+  }
+
+  .preview-tagline {
+    font-size: 28px;
+  }
+
+  .preview-btn {
+    padding: 14px 30px;
+    font-size: 16px;
   }
 }
 
@@ -778,17 +838,13 @@ body {
 }
 
 /* Блок: Тарифы */
-.tariffs-section {
-  background: white;
+#services {
+  background: linear-gradient(135deg, #f5e6d3 0%, #ede0d1 100%);
   padding: 80px 0;
 }
 
-.tariffs-main-title {
-  text-align: center;
-  font-size: 36px;
-  color: #c9a882;
-  margin-bottom: 50px;
-  font-weight: bold;
+#services .modules-main-title {
+  color: #5a4a3a;
 }
 
 .tariffs-grid {
@@ -949,7 +1005,7 @@ body {
 
 /* Блок: Списки программ */
 .products-section {
-  background: white;
+  background: linear-gradient(135deg, #f5e6d3 0%, #ede0d1 100%);
   padding: 80px 0;
 }
 
@@ -1045,7 +1101,6 @@ body {
 
 /* Блок: Модули и услуги */
 .modules-section {
-  background: linear-gradient(135deg, #f5e6d3 0%, #ede0d1 100%);
   padding: 80px 0;
 }
 
@@ -1885,15 +1940,15 @@ body {
   }
 }
 
-  .support-image,
-  .emergency-image {
-    max-width: 100%;
-  }
+.support-image,
+.emergency-image {
+  max-width: 100%;
+}
 
-  .header-container {
-    padding: 0 10px;
-  }
+.header-container {
+  padding: 0 10px;
+}
 
-  .container {
-    padding: 0 10px;
-  }
+.container {
+  padding: 0 10px;
+}
