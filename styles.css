@@ -44,12 +44,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -61,17 +62,12 @@ body {
 }
 
 .logo-icon {
-  width: 50px;
+  width: 60px;
   height: 50px;
-  background: linear-gradient(135deg, #c9a882 0%, #b8956f 100%);
-  border-radius: 8px;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo-text {
@@ -517,7 +513,7 @@ body {
   }
 
   .logo-icon {
-    width: 45px;
+    width: 55px;
     height: 45px;
     font-size: 18px;
   }
@@ -549,7 +545,7 @@ body {
   }
 
   .logo-icon {
-    width: 40px;
+    width: 50px;
     height: 40px;
     font-size: 16px;
   }
@@ -1722,7 +1718,7 @@ body {
   }
 
   .logo-icon {
-    width: 32px;
+    width: 42px;
     height: 32px;
     font-size: 12px;
   }
@@ -1813,7 +1809,7 @@ body {
   }
 
   .logo-icon {
-    width: 36px;
+    width: 46px;
     height: 36px;
     font-size: 14px;
   }
