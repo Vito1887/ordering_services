@@ -15,6 +15,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fafafa;
+  padding-top: 80px;
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
 .header {
   background: linear-gradient(135deg, #e8d5c4 0%, #d4c4b0 100%);
   padding: 20px 0;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -498,14 +499,67 @@ body {
 }
 
 /* Адаптивность */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .logo-main {
+    font-size: 22px;
+  }
+
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+  }
+
   .header-container {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    padding: 0 15px;
   }
 
   .navigation {
     justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .logo-main {
+    font-size: 18px;
+  }
+
+  .logo-subtitle {
+    font-size: 8px;
   }
 
   .main-title {
@@ -1438,7 +1492,7 @@ body {
 /* Блок: Контакты */
 .contacts-section {
   background: white;
-  padding: 80px 0;
+  padding: 60px 20px;
 }
 
 .contacts-content {
@@ -1641,16 +1695,54 @@ body {
 
   .contacts-content {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 25px;
   }
 
   .contact-item {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
+    min-width: auto;
+    flex: 1 1 auto;
   }
 }
 
 @media (max-width: 400px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header-container {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .logo {
+    gap: 6px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .logo-main {
+    font-size: 14px;
+  }
+
+  .logo-subtitle {
+    font-size: 6px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .navigation {
+    gap: 8px;
+  }
+
   .emergency-icon {
     width: 28px;
     height: 28px;
@@ -1664,19 +1756,85 @@ body {
   }
 
   .support-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .main-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .implementation-main-title {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  /* Футер на очень малых экранах */
+  .contacts-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .contact-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: auto;
+  }
+
+  .contact-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    min-width: 32px;
+  }
+
+  .contact-label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .contact-value {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .header-container {
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .logo-main {
+    font-size: 16px;
+  }
+
+  .logo-subtitle {
+    font-size: 7px;
+  }
+
+  .navigation {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
   .support-title,
   .implementation-main-title,
   .gallery-title,
@@ -1685,12 +1843,51 @@ body {
   .modules-main-title,
   .websites-main-title,
   .order-form-title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .main-title {
-    font-size: 22px;
+    font-size: 20px;
   }
+
+  .service-card {
+    min-width: 280px;
+  }
+
+  /* Улучшения для футера на мобильных */
+  .contacts-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  .contact-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .contact-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    min-width: 35px;
+  }
+
+  .contact-info {
+    flex: 1;
+    word-break: break-word;
+  }
+
+  .contact-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .contact-value {
+    font-size: 14px;
+  }
+}
 
   .support-image,
   .emergency-image {
@@ -1704,4 +1901,3 @@ body {
   .container {
     padding: 0 10px;
   }
-}
