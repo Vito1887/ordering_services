@@ -16,12 +16,19 @@ body {
   color: #333;
   background-color: #fafafa;
   padding-top: 120px;
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Шапка */
@@ -45,6 +52,8 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -736,9 +745,19 @@ body {
   }
 
   .vacancies-grid {
+    display: grid;
+    display: -webkit-grid;
+    display: -ms-grid;
     grid-template-columns: 1fr;
+    -webkit-grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
     gap: 15px;
+    -webkit-gap: 15px;
     padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .vacancy-card {
@@ -1716,11 +1735,19 @@ body {
 
 .vacancies-grid {
   display: grid;
+  display: -webkit-grid;
+  display: -ms-grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  -webkit-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  -ms-grid-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  -webkit-gap: 20px;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .vacancy-card {
@@ -3084,5 +3111,56 @@ body {
   .report-tariff-btn {
     padding: 8px 16px;
     font-size: 11px;
+  }
+}
+
+/* Экстремальный адаптив для 320px и ниже - гарантия от overflow */
+@media (max-width: 320px) {
+  * {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .header-container,
+  .vacancies-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .vacancies-grid {
+    display: grid;
+    display: -webkit-grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .vacancy-card {
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navigation {
+    max-width: calc(100vw - 30px);
+  }
+
+  section {
+    overflow: hidden;
   }
 }
