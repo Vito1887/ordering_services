@@ -15,7 +15,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fafafa;
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .container {
@@ -566,54 +566,63 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
   .header {
-    padding: 15px 0;
+    padding: 12px 0;
   }
 
   .header-container {
     flex-direction: column;
-    gap: 15px;
-    padding: 0 15px;
+    gap: 12px;
+    padding: 0 12px;
   }
 
   .navigation {
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
   .nav-link {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .logo {
-    gap: 10px;
+    gap: 8px;
   }
 
   .logo-icon {
-    width: 50px;
-    height: 40px;
-    font-size: 16px;
+    width: 45px;
+    height: 35px;
+    font-size: 14px;
   }
 
   .logo-main {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .logo-subtitle {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   .main-title {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 30px;
   }
 
   .service-card {
     flex: 1 1 100%;
+    min-width: auto;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .team-content {
     flex-direction: column;
+    gap: 30px;
   }
 
   .implementation-item {
@@ -628,17 +637,165 @@ body {
   }
 
   .preview-section {
-    padding: 60px 0;
-    min-height: auto;
+    padding: 40px 15px;
+    min-height: 60vh;
   }
 
   .preview-tagline {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 1.3;
   }
 
   .preview-btn {
-    padding: 14px 30px;
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .vacancy-card {
+    padding: 25px;
+  }
+}
+
+/* Адаптивность для очень малых экранов (480px и ниже) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 85px;
+  }
+
+  .header {
+    padding: 10px 0;
+  }
+
+  .header-container {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .logo-main {
+    font-size: 14px;
+  }
+
+  .logo-subtitle {
+    font-size: 6px;
+  }
+
+  .navigation {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .preview-section {
+    padding: 30px 12px;
+    min-height: 50vh;
+  }
+
+  .preview-tagline {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .preview-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .main-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .about-title {
+    font-size: 20px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .service-card {
+    padding: 15px;
+  }
+
+  .service-title {
     font-size: 16px;
+  }
+
+  .service-description {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .vacancies-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .vacancy-card {
+    padding: 18px;
+  }
+
+  .vacancy-company {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .vacancy-meta {
+    gap: 8px;
+  }
+
+  .vacancy-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .vacancy-description,
+  .vacancy-services,
+  .vacancy-team-info {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .vacancy-subtitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .vacancy-benefits {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .benefit-item {
+    padding: 15px;
+  }
+
+  .benefit-title {
+    font-size: 14px;
+  }
+
+  .benefit-description {
+    font-size: 12px;
+  }
+
+  .vacancy-apply-btn {
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .container {
+    padding: 0 12px;
   }
 }
 
@@ -1559,11 +1716,11 @@ body {
 
 .vacancies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .vacancy-card {
@@ -2544,31 +2701,33 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Адаптивность для страницы отчётности */
+/* Адаптивность для страницы отчётности (768px и ниже) */
 @media (max-width: 768px) {
   .report-preview-section {
-    padding: 60px 0;
+    padding: 40px 0;
     min-height: auto;
   }
 
   .report-preview-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .report-preview-subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .report-process-title,
   .report-conditions-title,
   .report-features-title,
   .report-video-title,
-  .report-order-title {
+  .report-order-title,
+  .report-tariff-title {
     font-size: 28px;
+    margin-bottom: 30px;
   }
 
   .timeline-steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
@@ -2576,22 +2735,165 @@ body {
     display: none;
   }
 
+  .step-circle {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+  }
+
+  .step-title {
+    font-size: 14px;
+  }
+
+  .step-description {
+    font-size: 12px;
+  }
+
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
   }
 
-  .video-placeholder {
-    min-height: 300px;
+  .feature-item {
+    padding: 20px;
   }
 
-  .video-title {
-    font-size: 18px;
+  .feature-icon {
+    font-size: 32px;
+  }
+
+  .feature-name {
+    font-size: 13px;
+  }
+
+  .report-video-container {
+    max-width: 100%;
+    padding: 0 20px;
   }
 
   .report-apply-btn,
-  .report-order-btn {
-    padding: 14px 30px;
+  .report-order-btn,
+  .report-tariff-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .condition-item {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .condition-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .condition-text {
+    font-size: 14px;
+  }
+}
+
+/* Адаптивность для очень малых экранов (480px и ниже) на report */
+@media (max-width: 480px) {
+  .report-preview-section {
+    padding: 30px 15px;
+  }
+
+  .report-preview-title {
+    font-size: 20px;
+  }
+
+  .report-preview-subtitle {
+    font-size: 14px;
+  }
+
+  .report-process-title,
+  .report-conditions-title,
+  .report-features-title,
+  .report-video-title,
+  .report-order-title,
+  .report-tariff-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .report-process-section,
+  .report-conditions-section,
+  .report-features-section,
+  .report-video-section,
+  .report-tariff-section,
+  .report-order-section {
+    padding: 40px 15px;
+  }
+
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .step-circle {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 12px;
+  }
+
+  .step-title {
+    font-size: 13px;
+  }
+
+  .step-description {
+    font-size: 11px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .feature-item {
+    padding: 15px;
+  }
+
+  .feature-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .feature-name {
+    font-size: 12px;
+  }
+
+  .report-video-container {
+    padding: 0 10px;
+  }
+
+  .report-apply-btn,
+  .report-order-btn,
+  .report-tariff-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .report-order-subtitle,
+  .report-tariff-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .condition-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .condition-icon {
+    width: 30px;
+    height: 30px;
     font-size: 16px;
+  }
+
+  .condition-text {
+    font-size: 12px;
   }
 }
 
@@ -2622,5 +2924,165 @@ body {
 
   .report-order-subtitle {
     font-size: 14px;
+  }
+}
+
+/* Адаптивность для очень малых экранов (320px и ниже) */
+@media (max-width: 320px) {
+  body {
+    padding-top: 75px;
+  }
+
+  .header {
+    padding: 8px 0;
+  }
+
+  .header-container {
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .logo-main {
+    font-size: 12px;
+  }
+
+  .logo-subtitle {
+    font-size: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .navigation {
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+    padding: 3px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .preview-section {
+    padding: 20px 10px;
+    min-height: 45vh;
+  }
+
+  .preview-tagline {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .preview-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .about-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    font-size: 12px;
+  }
+
+  .main-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .service-card {
+    padding: 12px;
+    min-width: auto;
+  }
+
+  .service-title {
+    font-size: 14px;
+  }
+
+  .service-description {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .service-link {
+    font-size: 12px;
+  }
+
+  .vacancies-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .vacancy-card {
+    padding: 15px;
+  }
+
+  .vacancy-company {
+    font-size: 16px;
+  }
+
+  .vacancy-description,
+  .vacancy-services,
+  .vacancy-team-info {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .vacancy-benefits {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .benefit-item {
+    padding: 12px;
+  }
+
+  .benefit-title {
+    font-size: 12px;
+  }
+
+  .benefit-description {
+    font-size: 11px;
+  }
+
+  .vacancy-apply-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .report-process-section,
+  .report-conditions-section,
+  .report-features-section,
+  .report-video-section,
+  .report-tariff-section,
+  .report-order-section {
+    padding: 30px 10px;
+  }
+
+  .report-tariff-title,
+  .report-order-title {
+    font-size: 18px;
+  }
+
+  .report-order-subtitle,
+  .report-tariff-subtitle {
+    font-size: 12px;
+  }
+
+  .report-apply-btn,
+  .report-order-btn,
+  .report-tariff-btn {
+    padding: 8px 16px;
+    font-size: 11px;
   }
 }
